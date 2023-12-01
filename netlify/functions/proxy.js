@@ -14,11 +14,11 @@ export async function handler (event, context) {
 				Authorization: `DeepL-Auth-Key ${apiKey}`,
 			},
 		});
-		const jsonContent = await res.json();
+	const htmlContent = await res.text();
 
 		return {
 			statusCode: 200,
-			body: jsonContent,
+			body: htmlContent,
 		};
 	} catch (e) {
 		let responseBody = "Something bad happened!";
